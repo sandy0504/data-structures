@@ -1,23 +1,27 @@
-# class
 public class singlyLinkedlist {
     
     private ListNode head;
     
-    #sub class
     private static class ListNode {
         private int data;
         private ListNode next;
         
-        #constructor of subclass
         public ListNode(int data ) {
             this.data=data;
             this.next=null;
         }
     
     }
-    #main method
+    public void display(){
+        ListNode current = head;
+        while(current != null){
+            System.out.print(current.data + "-->");
+            current=current.next;
+        }
+        System.out.print("null");
+    }
     public static void main(String[] args){
-        singlyLinkedlist sll = new singlyLinkedlist(); #object of main class
+        singlyLinkedlist sll = new singlyLinkedlist();
         sll.head =new ListNode(10);
         ListNode second = new ListNode(1);
         ListNode third = new ListNode(8);
@@ -26,13 +30,6 @@ public class singlyLinkedlist {
         sll.head.next = second;
         second.next = third;
         third.next = fourth;
-        
-        # displaying elements of linkdlist
-        ListNode current = sll.head; 
-        while(current != null){
-            System.out.print(current.data + "-->");
-            current=current.next;
-        }
-        System.out.print("null");
+        sll.display();
     }
 }
